@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página de Vendas Profissional</title>
+    <style>
+        /* Estilos Básicos (CSS) */
+        :root {
+            --primary-color: #3483fa; /* Azul padrão e-commerce */
+            --success-color: #00a650;
+            --text-dark: #333;
+            --bg-light: #ebebeb;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Coluna da Imagem */
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        /* Coluna de Informações */
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        
+        .price {
+            font-size: 32px;
+            font-weight: 300;
+            margin: 20px 0;
+        }
+
+        .installments {
+            color: var(--success-color);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Botão de Compra */
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #2968c8;
+        }
+
+        .description {
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="https://via.placeholder.com/400x400" alt="Imagem do Produto">
+        </div>
+
+        <div class="product-info">
+            <span>Novo | 157 vendidos</span>
+            <h1>Nome do Seu Produto Incrível</h1>
+            
+            <div class="price">
+                R$ 199,90
+            </div>
+            
+            <div class="installments">
+                em 10x R$ 19,99 sem juros
+            </div>
+
+            <p>🚚 <strong>Frete grátis</strong> para todo o Brasil</p>
+            <p>💳 Compra Garantida, receba o produto que está esperando ou devolvemos o dinheiro.</p>
+
+            <a href="#" class="buy-button">Comprar agora</a>
+        </div>
+
+        <div class="description">
+            <h2>Descrição do produto</h2>
+            <p>Escreva aqui todos os detalhes técnicos e benefícios do seu produto. Use este espaço para convencer o cliente de que esta é a melhor escolha!</p>
+        </div>
+    </div>
+
+</body>
+</html>
