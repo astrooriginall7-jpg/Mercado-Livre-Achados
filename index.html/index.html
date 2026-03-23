@@ -3,122 +3,1155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página de Vendas Profissional</title>
+    <title>Meus Achados - Mercado Livre</title>
     <style>
-        /* Estilos Básicos (CSS) */
         :root {
-            --primary-color: #3483fa; /* Azul padrão e-commerce */
-            --success-color: #00a650;
-            --text-dark: #333;
-            --bg-light: #ebebeb;
+            --ml-yellow: #fff159;
+            --ml-blue: #3483fa;
+            --text-gray: #666;
+            --bg-body: #ebebeb;
         }
 
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--bg-light);
+body {
+            font-family: 'Proxima Nova', Arial, sans-serif;
+            background-color: var(--bg-body);
             margin: 0;
             padding: 0;
-            color: var(--text-dark);
+        }
+
+        header {
+            background-color: var(--ml-yellow);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 20px auto;
-            background: #fff;
-            padding: 20px;
+            display: grid;
+            /* Cria 4 colunas no PC, 2 no Celular */
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        /* O Card do Produto */
+        .product-card {
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            border: 1px solid #eee;
         }
 
-        /* Coluna da Imagem */
-        .product-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .product-image img {
-            max-width: 100%;
-            border-radius: 4px;
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain; /* Não corta a imagem */
+            background: #fff;
         }
 
-        /* Coluna de Informações */
-        .product-info {
-            flex: 1;
-            min-width: 300px;
+        .info {
+            padding: 15px;
+            border-top: 1px solid #f5f5f5;
         }
 
-        h1 { font-size: 24px; margin-bottom: 10px; }
-        
+        .product-title {
+            font-size: 14px;
+            margin: 0 0 8px 0;
+            color: var(--text-gray);
+            height: 40px; /* Mantém o alinhamento */
+            overflow: hidden;
+        }
+
         .price {
-            font-size: 32px;
-            font-weight: 300;
-            margin: 20px 0;
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 5px;
         }
 
         .installments {
-            color: var(--success-color);
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 13px;
+            color: #00a650;
+            margin-bottom: 10px;
         }
 
-        /* Botão de Compra */
-        .buy-button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary-color);
+        .shipping {
+            font-size: 12px;
+            color: #00a650;
+            font-weight: bold;
+        }
+
+        .btn-view {
+            background: var(--ml-blue);
             color: white;
             text-align: center;
-            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 4px;
+            font-size: 14px;
             font-weight: bold;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        .buy-button:hover {
-            background-color: #2968c8;
-        }
-
-        .description {
-            margin-top: 30px;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
+    <header>✨ Meus Melhores Achados ✨</header>
+
     <div class="container">
-        <div class="product-image">
-            <img src="https://via.placeholder.com/400x400" alt="Imagem do Produto">
-        </div>
 
-        <div class="product-info">
-            <span>Novo | 157 vendidos</span>
-            <h1>Nome do Seu Produto Incrível</h1>
-            
-            <div class="price">
-                R$ 199,90
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_846325-MLA99503539342_112025-F.webp.jpg" alt="Produto 1">
+            <div class="info">
+                <p class="product-title">PlayStation 5 Slim Cor Branco 1 TB Versão Mídia Física</p>
+                <div class="price">R$ 3.625,14</div>
+                <div class="installments">10x R$ 389,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
             </div>
-            
-            <div class="installments">
-                em 10x R$ 19,99 sem juros
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_990440-MLA100272258073_122025-F.webp.jpg" alt="Produto 2">
+            <div class="info">
+                <p class="product-title">Lavadora de Alta pressão Kärcher Compacta 1500 PSI/Libras 1400W 300L/h com Aplicador de Detergente e Lança Regulável 127v</p>
+                <div class="price">R$ 299,99</div>
+                <div class="installments">12x R$ 29,25</div>
+                <div class="shipping">Frete Grátis 🚚</div>
             </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
 
-            <p>🚚 <strong>Frete grátis</strong> para todo o Brasil</p>
-            <p>💳 Compra Garantida, receba o produto que está esperando ou devolvemos o dinheiro.</p>
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_616086-MLA103474456114_012026-F.webp.jpg" alt="Produto 3">
+            <div class="info">
+                <p class="product-title">Notebook Samsung Galaxy Book2 Business Core I5 8gb Ram 512gb Ssd W11 Professional 14 Full Hd Np641bef-ka1br</p>
+                <div class="price">R$ 4.449,05</div>
+                <div class="installments">10x R$ 499,90</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_880300-MLB90660256341_082025-F.webp.jpg" alt="Produto 4">
+            <div class="info">
+                <p class="product-title">Ventilador De Teto Ventisol Fênix Inverter Controle - Bivolt</p>
+                <div class="price">R$ 257,40</div>
+                <div class="installments">6x R$ 47,67 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
 
-            <a href="#" class="buy-button">Comprar agora</a>
-        </div>
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_666874-MLA96211670294_102025-F.webp.jpg" alt="Produto 5">
+            <div class="info">
+                <p class="product-title">Hisense Smart TV 4K 58 Polegadas 58A6NV com Dolby Vision, HDR10, HLG, Dolby Gaming, Film Maker, DTS Virtual X, Compatibilidade Alexa e Google Home</p>
+                <div class="price">R$ 2.137,14</div>
+                <div class="installments">10x R$ 229,80</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
 
-        <div class="description">
-            <h2>Descrição do produto</h2>
-            <p>Escreva aqui todos os detalhes técnicos e benefícios do seu produto. Use este espaço para convencer o cliente de que esta é a melhor escolha!</p>
-        </div>
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_963485-MLB94579785063_102025-F-800mlgarrafa-termica-agua-squeeze-inox-academiaquente-e-frio.webp.jpg" alt="Produto 6">
+            <div class="info">
+                <p class="product-title">Notebook Samsung Galaxy Book2 Business Core I5 8gb Ram 512gb Ssd W11 Professional 14 Full Hd Np641bef-ka1br</p>
+                <div class="price">R$ 37,23</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_987462-MLA99509630578_112025-F.webp.jpg" alt="Produto 7">
+            <div class="info">
+                <p class="product-title">Monitor Gamer Samsung Odyssey G5, 32 ,qhd, 165hz,1ms,hdmi,dp Preto</p>
+                <div class="price">R$ 1.159</div>
+                <div class="installments">10x R$ 115,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_716412-MLA99524473372_122025-F.webp.jpg" alt="Produto 8">
+            <div class="info">
+                <p class="product-title">Samsung Galaxy A06 5g Dual Sim 128gb preto</p>
+                <div class="price">R$ 660,88</div>
+                <div class="installments">10x R$ 75,10</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_787358-MLA100187065347_122025-F.webp.jpg" alt="Produto 9">
+            <div class="info">
+                <p class="product-title">Micro-ondas Electrolux 20L Branco com Função Tira Odor e Descongelar MTO30</p>
+                <div class="price">R$ 469,90</div>
+                <div class="installments">9x R$ 52,11</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_983786-MLA99479656582_112025-F.webp.jpg" alt="Produto 10">
+            <div class="info">
+                <p class="product-title">Smartphone Motorola Moto g35 5G - 128GB 12GB (4GB RAM+8GB Ram Boost) e Camera 50MP com AI NFC Tela 6.7" com Superbrilho - Verde - Vegan Leather</p>
+                <div class="price">R$ 809,10</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_771898-MLA100007263879_122025-F.webp.jpg" alt="Produto 11">
+            <div class="info">
+                <p class="product-title">Caixa Amplificada CM-550-L 550w Rms Preta Mondial Bivolt Preto</p>
+                <div class="price">R$ 459</div>
+                <div class="installments">9x R$ 51</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_928100-MLA99577187878_122025-F.webp.jpg" alt="Produto 12">
+            <div class="info">
+                <p class="product-title">Furadeira E Parafusadeira De Impacto 20V Desoon Motor 100% Cobre Torque 42Nm 2 Baterias De Lítio Recarregável Com Maleta De Transporte + 13 Peças Acessórios Profissional Velocidade Variável 3/8 Pol</p>
+                <div class="price">R$ 111,54</div>
+                <div class="installments">12x R$ 11,02</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_636675-MLA107807100101_022026-F.webp.jpg" alt="Produto 13">
+            <div class="info">
+                <p class="product-title">Smart Tv 32 Philco Roku Tv Dolby Áudio Hdr10 P32crb</p>
+                <div class="price">R$ 809,10</div>
+                <div class="installments">10x R$ 89,91 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_848860-MLA99964507641_112025-F.webp.jpg" alt="Produto 14">
+            <div class="info">
+                <p class="product-title">Creatina Monohidratada Pura 1kg Dark Lab Unidade Sem sabor</p>
+                <div class="price">R$ 69,90</div>
+                <div class="installments">12x R$ 6,88</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_808481-MLA99967103043_112025-F.webp.jpg" alt="Produto 15">
+            <div class="info">
+                <p class="product-title">Impressora função única monocromática Zebra ZD 220</p>
+                <div class="price">R$ 1.789</div>
+                <div class="installments">12x R$ 171,95</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_880782-MLA95236583537_102025-F.webp.jpg" alt="Produto 16">
+            <div class="info">
+                <p class="product-title">iPhone 17 Pro Max 256GB - Azul-profundo - Distribuidor Autorizado</p>
+                <div class="price">R$ 11.249,10</div>
+                <div class="installments">10x R$ 1.249,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_660323-MLA99978121265_112025-F.webp.jpg" alt="Produto 17">
+            <div class="info">
+                <p class="product-title">Aparador E Raspador Philips Oneblade Qp1425/10</p>
+                <div class="price">R$ 139</div>
+                <div class="installments">12x R$ 13,74</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_661279-MLA95712519194_102025-F.webp.jpg" alt="Produto 18">
+            <div class="info">
+                <p class="product-title">Ventilador de Parede e Mesa WAP FLOW TURBO com 8 Pás 3 Velocidades</p>
+                <div class="price">R$ 132,99</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_687418-MLB81527468562_012025-F.webp.jpg" alt="Produto 19">
+            <div class="info">
+                <p class="product-title">Perfume Lattafa Asad 100ml Eau De Parfum Original Árabe Original Com Nota Fiscal E Selo Original Lataffa</p>
+                <div class="price">R$ 173,18</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_927792-MLB91185357960_092025-F.webp.jpg" alt="Produto 20">
+            <div class="info">
+                <p class="product-title">Câmera Segurança Ip Externa Wifi A28 App Icsee À Prova Dágua</p>
+                <div class="price">R$ 105,70</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_714775-MLA99507479710_112025-F.webp.jpg" alt="Produto 21">
+            <div class="info">
+                <p class="product-title">Cooktop Itatiaia Essencial 5 Bocas Preto</p>
+                <div class="price">R$ 376,46</div>
+                <div class="installments">8x R$ 55,36</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_695526-MLA99964513811_112025-F.webp.jpg" alt="Produto 22">
+            <div class="info">
+                <p class="product-title">TP-Link Deco X50(3-pack) Roteador Mesh Wifi6 AX3000 Cobre até 600m²</p>
+                <div class="price">R$ 1.079,90</div>
+                <div class="installments">10x R$ 119,99</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_602859-MLB108178015973_032026-F-tnis-sandrini-spryte-masculino-urbano-confortavel-casual.webp.jpg" alt="Produto 23">
+            <div class="info">
+                <p class="product-title">Tênis Sandrini Spryte Masculino Urbano Confortável Casual</p>
+                <div class="price">R$ 89,99</div>
+                <div class="installments">12x R$ 8,86</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_987457-MLB83130664924_032025-F-tnis-kappa-pulse-unissex-academia-caminhada.webp.jpg" alt="Produto 24">
+            <div class="info">
+                <p class="product-title">Tênis Kappa Pulse Unissex Academia Caminhada</p>
+                <div class="price">R$ 126,34</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_615628-MLA99434271160_112025-F.webp.jpg" alt="Produto 25">
+            <div class="info">
+                <p class="product-title">Impressora HP Smart Tank 210 Colorida 1 USB 2.0 de alta velocidade (dispositivo); 1 porta Wi-Fi 802.11b/g/n; 1 Wi-Fi Direct - 100 a 240 VCA</p>
+                <div class="price">R$ 699</div>
+                <div class="installments">10x R$ 77,67 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_648121-MLA100027586579_122025-F.webp.jpg" alt="Produto 26">
+            <div class="info">
+                <p class="product-title">Caixa De Som Boombox Plus Aiwa Bbs-01-b 200w Bt 30h Ip66 Usb Preto</p>
+                <div class="price">R$ 1.156,99</div>
+                <div class="installments">10x R$ 115,70 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_823916-MLB85967133770_062025-F-4-short-tactel-masculino-bermuda-praia-casual-academia-bolso.webp.jpg" alt="Produto 27">
+            <div class="info">
+                <p class="product-title">4 Short Tactel Masculino Bermuda Praia Casual Academia Bolso</p>
+                <div class="price">R$ 60,89</div>
+                <div class="installments">12x R$ 6</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_674627-MLA100016786223_122025-F.webp.jpg" alt="Produto 28">
+            <div class="info">
+                <p class="product-title">Caixa De Som Bluetooth Jbl Boombox 4 Azul Azul BIVOLT</p>
+                <div class="price">R$ 2.339,10</div>
+                <div class="installments">10x R$ 259,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_679526-MLA100501405537_122025-F.webp.jpg" alt="Produto 29">
+            <div class="info">
+                <p class="product-title">Bicicleta Ergométrica Fitness Para Cardio E Musculação Com Base Cor Preto E Vermelho 6kg Inercia Marca Sevenfit</p>
+                <div class="price">R$ 649,99</div>
+                <div class="installments">12x R$ 62,85</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_950255-MLA99604896412_122025-F.webp.jpg" alt="Produto 30">
+            <div class="info">
+                <p class="product-title">Fone De Ouvido Sem Fio Bluetooth F9-5 Pares Som Imersivo Powerbank Moderno Bateria Longa Duração Academia Compativel Com Todos Celulares</p>
+                <div class="price">R$ 24,79</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_748921-MLA99585526382_122025-F.webp.jpg" alt="Produto 31">
+            <div class="info">
+                <p class="product-title">Cuba Gourmet Cozinha Premium Aço Inox 304 75x45 Stillus Home com Torneira Monocomando Cascata 360° Lavador de Copos e Acessórios Completa</p>
+                <div class="price">R$ 550,65</div>
+                <div class="installments">8x R$ 68,83 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_658148-MLB89993492671_082025-F-garrafa-termica-1-litro-com-termmetro-led-para-chas-cafe.webp.jpg" alt="Produto 32">
+            <div class="info">
+                <p class="product-title">Garrafa Térmica 1 Litro Com Termômetro Led Para Chás / Café</p>
+                <div class="price">R$ 49,96</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_844642-MLA100008441461_122025-F.webp.jpg" alt="Produto 33">
+            <div class="info">
+                <p class="product-title">Monitor GamerLG UltragearCurvo –Tela VAde 34”, 2K WQHD 3440 x 1440, UltraWide™ (formato 21:9), 160Hz, 1ms (MBR), AMD FreeSyncPremium –34GP63A-B</p>
+                <div class="price">R$ 1.898,85</div>
+                <div class="installments">10x R$ 199,89 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_781206-MLB78936252980_092024-F-kit-10-cueca-boxer-zorba-781-original-em-algodo-sem-costura.webp.jpg" alt="Produto 34">
+            <div class="info">
+                <p class="product-title">Kit 10 Cueca Boxer Zorba 781 Original Em Algodão Sem Costura</p>
+                <div class="price">R$ 159,07</div>
+                <div class="installments">12x R$ 15,72 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_655411-MLA104870149475_012026-F.webp.jpg" alt="Produto 35">
+            <div class="info">
+                <p class="product-title">Ar Condicionado Split Hi Wall Inverter Aufit 9.000 Btus Frio R-32.</p>
+                <div class="price">R$ 1.599</div>
+                <div class="installments">12x R$ 153,69</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_861641-MLA100053796807_122025-F.webp.jpg" alt="Produto 36">
+            <div class="info">
+                <p class="product-title">Cooktop 5 Bocas A Gás Atlas Agile Up Mega Chama Preto</p>
+                <div class="price">R$ 374,01</div>
+                <div class="installments">8x R$ 53,74</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_902043-MLA96988011016_112025-F.webp.jpg" alt="Produto 37">
+            <div class="info">
+                <p class="product-title">Mini Projetor Hy300 Android 4k Portátil Wi-fi Bluetooth Hdmi Usb Cinema Em Casa Compacto Alta Resolução Full Hd Smart Projetor Davely Celular Notebook Games Apresentação</p>
+                <div class="price">R$ 179,90</div>
+                <div class="installments">12x R$ 17,78 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_862837-MLA82613313665_022025-F.webp.jpg" alt="Produto 38">
+            <div class="info">
+                <p class="product-title">Clash Colônia Masculina O Boticário 100 ml</p>
+                <div class="price">R$ 134,90</div>
+                <div class="installments">4x R$ 33,72 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_764756-MLA96570589252_112025-F.webp.jpg" alt="Produto 39">
+            <div class="info">
+                <p class="product-title">Cadeira Escritório Ergonômica Genebra B500 Luvinco Cor Preto Com Suporte Lombar Estofado Mesh</p>
+                <div class="price">R$ 599</div>
+                <div class="installments">10x R$ 59,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_690574-MLB100520428706_122025-F.webp.jpg" alt="Produto 40">
+            <div class="info">
+                <p class="product-title">Basike Fone De Ouvido Sem Fio Bluetooth Para Bluetooth 5.3</p>
+                <div class="price">R$ 66,16</div>
+                <div class="installments">12x R$ 6,52</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_861212-MLA99932433553_112025-F.webp.jpg" alt="Produto 41">
+            <div class="info">
+                <p class="product-title">Bicicleta Aro 29 Gts Dexter 24 Marchas Freio A Disco Cor Grafite Com Preto Tamanho Do Quadro 21</p>
+                <div class="price">R$ 829</div>
+                <div class="installments">10x R$ 82,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_671666-MLA99870769883_112025-F.webp.jpg" alt="Produto 42">
+            <div class="info">
+                <p class="product-title">Jogo De Ferramentas Soquetes Encaixe 1/4 E 1/2 Pol. Catraca Reversível Aço Crv 94 Peças Com Maleta Tkf94 The Black Tools</p>
+                <div class="price">R$ 237,40</div>
+                <div class="installments">6x R$ 41,65 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744537-MLB106539390348_022026-F-carenagem-completa-16-pc-titan-fan-160-2025-2026-paramotos.webp.jpg" alt="Produto 43">
+            <div class="info">
+                <p class="product-title">Carenagem Completa 16 Pc Titan Fan 160 2025 2026 Paramotos</p>
+                <div class="price">R$ 1.309,99</div>
+                <div class="installments">10x R$ 131 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_836900-MLA96382534713_102025-F.webp.jpg" alt="Produto 44">
+            <div class="info">
+                <p class="product-title">Pulverizador Elétrico Costal Brudden SS20B 20L Com Bateria Recarregável 12V</p>
+                <div class="price">R$ 327,18</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_690494-MLB89417692447_082025-F-secador-de-cabelo-profissional-de-alta-velocidade-110v-220.webp.jpg" alt="Produto 45">
+            <div class="info">
+                <p class="product-title">Secador De Cabelo Profissional De Alta Velocidade 110v 220</p>
+                <div class="price">R$ 179,55</div>
+                <div class="installments">5x R$ 35,91</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_753960-MLB78002610612_082024-F.webp.jpg" alt="Produto 46">
+            <div class="info">
+                <p class="product-title">Perfume Sedutor Árabe Sabah 100ml Original Feminino</p>
+                <div class="price">R$ 149,50</div>
+                <div class="installments">12x R$ 14,77</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_895991-MLA99455670776_112025-F.webp.jpg" alt="Produto 47">
+            <div class="info">
+                <p class="product-title">Cooktop de Indução 4 Bocas Preto com Trava de Segurança Dako Supreme</p>
+                <div class="price">R$ 1.059</div>
+                <div class="installments">12x R$ 102,80</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_993431-MLB89690416728_082025-F-fritadeira-air-fryer-3l-sem-oleo-1200w-antiaderente-110220v.webp.jpg" alt="Produto 48">
+            <div class="info">
+                <p class="product-title">Fritadeira Air Fryer 3l Sem Óleo 1200w Antiaderente 110/220v</p>
+                <div class="price">R$ 221</div>
+                <div class="installments">12x R$ 21,88</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_799717-MLU82633534164_032025-F.webp.jpg" alt="Produto 49">
+            <div class="info">
+                <p class="product-title">Kit De 2 Pneus West Lake Aro 14 Zupereco Z108 185/60r14 82 H</p>
+                <div class="price">R$ 587,91</div>
+                <div class="installments">10x R$ 58,79 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_623957-MLB83818799911_042025-F.webp.jpg" alt="Produto 50">
+            <div class="info">
+                <p class="product-title">Kit 4 Pneus Aro 14 185/60r14 82 H Westlake Zupereco Z108</p>
+                <div class="price">R$ 1.182,81</div>
+                <div class="installments">12x R$ 114,82</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_779880-MLA99338426952_112025-F.webp.jpg" alt="Produto 51">
+            <div class="info">
+                <p class="product-title">Pneu 205/55r16 Goodyear Eagle Sport 2 91v Aro 16 Índice de velocidade V</p>
+                <div class="price">R$ 449,90</div>
+                <div class="installments">8x R$ 56,24</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_830706-MLB94933415164_102025-F-pneu-traseiro-17-66h-14070-17-honda-cb-300-sport-preto-moto.webp.jpg" alt="Produto 52">
+            <div class="info">
+                <p class="product-title">Pneu Traseiro 17 66h 140/70-17 Honda Cb 300 Sport Preto Moto</p>
+                <div class="price">R$ 227,34</div>
+                <div class="installments">12x R$ 22,50</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_854040-MLB81383237300_122024-F-pneu-moto-xre-300-tornado-xtz-250-12080-18-60p-traseiro.webp.jpg" alt="Produto 53">
+            <div class="info">
+                <p class="product-title">Pneu Moto Xre 300 Tornado Xtz 250 120/80-18 60p Traseiro</p>
+                <div class="price">R$ 197,99</div>
+                <div class="installments">12x R$ 19,60</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_989970-MLB50845543854_072022-F-kit-freio-v-brake-bike-aluminio-com-manete-muito-resistente.webp.jpg" alt="Produto 54">
+            <div class="info">
+                <p class="product-title">Kit Freio V Brake Bike Alumínio Com Manete Muito Resistente</p>
+                <div class="price">R$ 49,41</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_879965-MLB49244052052_032022-F.webp.jpg" alt="Produto 55">
+            <div class="info">
+                <p class="product-title">Grupo Relação Sunrace Dkm 1x9v Cassete 11/50 Mtb Completo</p>
+                <div class="price">R$ 661</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_683610-MLB31051924119_062019-F.webp.jpg" alt="Produto 56">
+            <div class="info">
+                <p class="product-title">Freio Disco Hidráulico Shimano Altus Mt200 Traseiro New M315</p>
+                <div class="price">R$ 159,60</div>
+                <div class="installments">5x R$ 33,60 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_980083-MLA99536118002_122025-F.webp.jpg" alt="Produto 57">
+            <div class="info">
+                <p class="product-title">Par Pneu Bicicleta Levorin Praieiro Aro 26x1.95 Slick Balão Cor Preto</p>
+                <div class="price">R$ 124,90</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_601603-MLA99952902265_112025-F.webp.jpg" alt="Produto 58">
+            <div class="info">
+                <p class="product-title">Freio Hidráulico Bike Absolute Disco 160mm M220 Completo</p>
+                <div class="price">R$ 149,69</div>
+                <div class="installments">5x R$ 31,51 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_796582-MLA100045214187_122025-F.webp.jpg" alt="Produto 59">
+            <div class="info">
+                <p class="product-title">Pedivela Triplo Sugino MTB 28/38/48D 170mm Alumínio Bicicleta 9 Velocidades</p>
+                <div class="price">R$ 123,38</div>
+                <div class="installments">12x R$ 12,19</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_698191-MLA106140645556_022026-F.webp.jpg" alt="Produto 60">
+            <div class="info">
+                <p class="product-title">Pedivela Bmx 3 Peças Gta 170mm Eixo 19mm 8 Estrias Cor Preto</p>
+                <div class="price">R$ 184</div>
+                <div class="installments">12x R$ 18,21</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_887943-MLA98650584547_112025-F.webp.jpg" alt="Produto 61">
+            <div class="info">
+                <p class="product-title">Fritadeira Sem Óleo Air Fryer 3,5l Mondial 1500w AF-31</p>
+                <div class="price">R$ 234,52</div>
+                <div class="installments">12x R$ 23,22 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_884532-MLA107018681241_022026-F.webp.jpg" alt="Produto 62">
+            <div class="info">
+                <p class="product-title">Mixer Chef Casa 3 Em 1 Turbo Potente 1000w Processador Triturador Com Fuet Batedor De Claras Em Neve 5 Velocidades Super Misturadora Batedor Liquefazer Cinza Lunar 220v - Kian</p>
+                <div class="price">R$ 163,93</div>
+                <div class="installments">12x R$ 16,20</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_923263-MLA99474168604_112025-F.webp.jpg" alt="Produto 63">
+            <div class="info">
+                <p class="product-title">Cafeteira Elétrica Electrolux Jarra vidro, acabamento inox filtro Permanente Removível Sistema Corta Pingos Capacidade 15 xicaras 600ml ECM10</p>
+                <div class="price">R$ 123,49</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_608658-MLA99454382240_112025-F.webp.jpg" alt="Produto 64">
+            <div class="info">
+                <p class="product-title">Processador De Alimentos Mini 500ml Elétrico Kian 24233 </p>
+                <div class="price">R$ 72</div>
+                <div class="installments">12x R$ 7,09 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_648798-MLA100577800180_122025-F.webp.jpg" alt="Produto 65">
+            <div class="info">
+                <p class="product-title">Kit Cafeteira 15 Xícaras e Torradeira Elétrica 8 Níveis Efficient Inox ECT10 Electrolux</p>
+                <div class="price">R$ 259,90</div>
+                <div class="installments">12x R$ 25,42</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_903825-MLA99962098377_112025-F.webp.jpg" alt="Produto 66">
+            <div class="info">
+                <p class="product-title">Liquidificador Mallory Fast Mix 2.1l 520w 2 Vel. Branco</p>
+                <div class="price">R$ 112</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_856153-MLA99520227246_112025-F.webp.jpg" alt="Produto 67">
+            <div class="info">
+                <p class="product-title">Espremedor De Frutas Aedf01i Preto 700ml 25w Agratto Frequência 60 Hz</p>
+                <div class="price">R$ 73,49</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_849138-MLA84536495898_052025-F.webp.jpg" alt="Produto 68">
+            <div class="info">
+                <p class="product-title">Liquidificador Britânia Turbo 900W 2,6L 4 Velocidades Preto BLQ970P</p>
+                <div class="price">R$ 137,90</div>
+                <div class="installments">4x R$ 34,48</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744277-MLB99612490147_112025-F.webp.jpg" alt="Produto 69">
+            <div class="info">
+                <p class="product-title">Reservatório P/ Extrator De Sucos E-10 E-08 Mondial Original</p>
+                <div class="price">R$ 38,90</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_881480-MLB104546350013_012026-F.webp.jpg" alt="Produto 70">
+            <div class="info">
+                <p class="product-title">Kian Mixer Turbo 3em1 Inox Misturadora 1000w 5 Velocidades</p>
+                <div class="price">R$ 156</div>
+                <div class="installments">12x R$ 15,42</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_987770-MLB93173307869_092025-F-fone-de-ouvido-com-fio-com-controle-e-microfone-35mm-ej30.webp.jpg" alt="Produto 71">
+            <div class="info">
+                <p class="product-title">Fone De Ouvido Com Fio Com Controle E Microfone 3.5mm Ej30</p>
+                <div class="price">R$ 23,32</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_685030-MLB98942862115_112025-F-fone-de-ouvido-tipo-c-para-samsung-a16-a25-a36-a56-m35-m55.webp.jpg" alt="Produto 72">
+            <div class="info">
+                <p class="product-title">Fone De Ouvido Tipo C Para Samsung A16 A25 A36 A56 M35 M55</p>
+                <div class="price">R$ 24,91</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_743438-MLA105468591979_012026-F.webp.jpg" alt="Produto 73">
+            <div class="info">
+                <p class="product-title">Headset Gamer Redragon Zeus Lite Preto P3 H510-lt Preto</p>
+                <div class="price">R$ 149,99</div>
+                <div class="installments">12x R$ 14,82 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_616702-MLA93040515733_092025-F.webp.jpg" alt="Produto 74">
+            <div class="info">
+                <p class="product-title">Fone De Ouvido Gamer Dj Musicos Retorno Palco Inear C/case Cor Preto</p>
+                <div class="price">R$ 33,57</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_638002-MLA99508042592_112025-F.webp.jpg" alt="Produto 75">
+            <div class="info">
+                <p class="product-title">Fone Headset Gamer HAVIT H2230d P2 P3 3,5MM Microfone Removível Consoles PC Preto</p>
+                <div class="price">R$ 93,44</div>
+                <div class="installments">12x R$ 9,20</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_696258-MLA99938936857_112025-F.webp.jpg" alt="Produto 76">
+            <div class="info">
+                <p class="product-title">Extensão Elétrica 30 Metros Reforçada 10/20a Obra Profissional Tomada Em Barra Preto Ms Eletro Eletrônica</p>
+                <div class="price">R$ 48,75</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_704852-MLA100697134150_122025-F.webp.jpg" alt="Produto 77">
+            <div class="info">
+                <p class="product-title">Extensão 30 Metros Reforçada Cabo PP 2x2,5mm 20A 3 tomadas,obras, Máquinas e Ferramentas ,Camping, Acampamento e Atividades ao Ar Livre LEF</p>
+                <div class="price">R$ 190,84</div>
+                <div class="installments">12x R$ 18,89</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_607299-MLB92646217755_092025-F.webp.jpg" alt="Produto 78">
+            <div class="info">
+                <p class="product-title">Extensão De 3 Tomadas 10/20a Com Desconto 30 Metros</p>
+                <div class="price">R$ 95,92</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_880469-MLA99508570702_112025-F.webp.jpg" alt="Produto 79">
+            <div class="info">
+                <p class="product-title">Bosch Professional GKS-150 serra azul circular de 1500W</p>
+                <div class="price">R$ 647,28</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_774385-MLA100027620945_122025-F.webp.jpg" alt="Produto 80">
+            <div class="info">
+                <p class="product-title">Serra Circular A Bateria Einhell Te-cs 18/190 Li Bl sem bateria</p>
+                <div class="price">R$ 799</div>
+                <div class="installments">10x R$ 79,90</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_928496-MLB84919526589_052025-F.webp.jpg" alt="Produto 81">
+            <div class="info">
+                <p class="product-title">Kit 1000 Pçs Parafusos Buchas C/ Maleta Chipboard P/ Madeira</p>
+                <div class="price">R$ 59,90</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_920104-MLB107905657227_032026-F.webp.jpg" alt="Produto 82">
+            <div class="info">
+                <p class="product-title">Kit Ferramentas Alicates Corte Bico Chave Inglesa Martelo</p>
+                <div class="price">R$ 90,33</div>
+                <div class="installments">12x R$ 8,90 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_888055-MLA99506604606_112025-F.webp.jpg" alt="Produto 83">
+            <div class="info">
+                <p class="product-title">Relógio Unissex Casio Digital Esportivo A158wa-1df Prata Retrô Vintage Pulseira em Aço Inoxidável</p>
+                <div class="price">R$ 170</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_629602-MLA99476766624_112025-F.webp.jpg" alt="Produto 84">
+            <div class="info">
+                <p class="product-title">Relógio Invicta Pro Diver Plaque Ouro Fundo Verde 0075 Cor da correia Dourado Cor do fundo Dourado</p>
+                <div class="price">R$ 380</div>
+                <div class="installments">6x R$ 63,33 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_913995-MLB85157007236_052025-F.webp.jpg" alt="Produto 85">
+            <div class="info">
+                <p class="product-title">Relógio Invicta Pro Diver 6983 Banhado A Ouro 18k Complet Nf</p>
+                <div class="price">R$ 507</div>
+                <div class="installments">10x R$ 50,70 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_984387-MLA99852941445_112025-F.webp.jpg" alt="Produto 86">
+            <div class="info">
+                <p class="product-title">Relógio Invicta Thunderbolt Banhado Ouro 21359 Original N.f Cor Da Correia Dourado Cor Do Bisel Dourado Cor Do Fundo Dourado</p>
+                <div class="price">R$ 630</div>
+                <div class="installments">10x R$ 63 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_789545-MLU76888482760_062024-F.webp.jpg" alt="Produto 87">
+            <div class="info">
+                <p class="product-title">Relógio Technomarine Pro Diver 44715 Steel para homem</p>
+                <div class="price">R$ 342,63</div>
+                <div class="installments">7x R$ 51,52 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_856122-MLA99857280531_112025-F.webp.jpg" alt="Produto 88">
+            <div class="info">
+                <p class="product-title">Relógio Invicta Venon Hybrid 27792 Original Banhado Ouro 18k</p>
+                <div class="price">R$ 566,72</div>
+                <div class="installments">10x R$ 61,60 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_990168-MLA99949047981_112025-F.webp.jpg" alt="Produto 89">
+            <div class="info">
+                <p class="product-title">Relógio Invicta Hybrid Venom 27788 Cromado 100% Original Correia Prata Bisel Prata/Verde Fundo Verde</p>
+                <div class="price">R$ 727,44</div>
+                <div class="installments">10x R$ 72,74 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_882846-MLA81772123394_012025-F.webp.jpg" alt="Produto 90">
+            <div class="info">
+                <p class="product-title">Relógio masculino Invicta Specialty 48283 Gold</p>
+                <div class="price">R$ 371,98</div>
+                <div class="installments">7x R$ 55,94 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_765785-MLA99966294209_112025-F.webp.jpg" alt="Produto 91">
+            <div class="info">
+                <p class="product-title">Copo Térmico de Cerveja Stanley Matte Black Preto | 473ML</p>
+                <div class="price">R$ 79,62</div>
+                <div class="installments">12x R$ 7,84 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_860292-MLB91829901136_092025-F-luva-de-treino-para-boxe-muay-thai-oz-luta-conforto-vollo.webp.jpg" alt="Produto 92">
+            <div class="info">
+                <p class="product-title">Luva De Treino Para Boxe & Muay Thai Oz Luta Conforto Vollo</p>
+                <div class="price">R$ 203</div>
+                <div class="installments">12x R$ 20,10 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_758989-MLB100591126162_122025-F.webp.jpg" alt="Produto 93">
+            <div class="info">
+                <p class="product-title">Bola Adidas Copa Do Mundo 2026 Trionda Jd8030 Branco</p>
+                <div class="price">R$ 214,43</div>
+                <div class="installments">6x R$ 35,74 sem juros</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+<a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_815214-MLB92882290689_092025-F-garrafa-termica-squeeze-800ml-inox-agua-quentefrio-academia.webp.jpg" alt="Produto 94">
+            <div class="info">
+                <p class="product-title">Garrafa Térmica Squeeze 800ml Inox Água Quente/frio Academia</p>
+                <div class="price">R$ 41</div>
+                <div class="installments">Á vista</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_647496-MLA104133660993_012026-F.webp.jpg" alt="Produto 95">
+            <div class="info">
+                <p class="product-title">Hoverboard Skate Elétrico 6.5 Polegadas Com Led E Bluetooth Cor Roxo Galáxia Brinovar</p>
+                <div class="price">R$ 892</div>
+                <div class="installments">10x R$ 89,20</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
+        <a href="LINK_DO_PRODUTO_AQUI" class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_979181-MLA99508461076_112025-F.webp.jpg" alt="Produto 96">
+            <div class="info">
+                <p class="product-title">Kit Vara 1,68m 25lbs E Molinete 2000 6kg E Linha Mono</p>
+                <div class="price">R$ 143,49</div>
+                <div class="installments">4x R$ 35,87</div>
+                <div class="shipping">Frete Grátis 🚚</div>
+            </div>
+            <div class="btn-view">Ver oferta</div>
+        </a>
+
     </div>
 
 </body>
